@@ -1,3 +1,30 @@
+#' @title Flip a Coin
+#'
+#' @description Picks a random number from 1-2. Essentially a "d2".
+#'
+#' @return (numeric) result of coin flip (either 1 or 2)
+#' @export
+#'
+coin <- function(){ base::sample(x = 1:2, size = 1) }
+
+#' @title Roll a Two-Sided Dice
+#'
+#' @description Picks a random number from 1-2. Essentially flips a coin.
+#'
+#' @return (numeric) result of "roll" of specified dice type
+#' @export
+#'
+d2 <- function(){ base::sample(x = 1:2, size = 1) }
+
+#' @title Roll a Three-Sided Dice
+#'
+#' @description Picks a random number from 1-3
+#'
+#' @return (numeric) result of "roll" of specified dice type
+#' @export
+#'
+d3 <- function(){ base::sample(x = 1:3, size = 1) }
+
 #' @title Roll a Four-Sided Dice ("d4")
 #'
 #' @description Picks a random number from 1-4
@@ -60,21 +87,3 @@ d20 <- function(){ base::sample(x = 1:20, size = 1) }
 #' @export
 #'
 d100 <- function(){ base::sample(x = 1:100, size = 1) }
-
-#' @title Flip a Coin
-#'
-#' @description Picks a random number from 1-2. Essentially a "d2".
-#'
-#' @return (numeric) result of coin flip (either 1 or 2)
-#' @export
-#'
-coin <- function(){ base::sample(x = 1:2, size = 1) }
-
-#' @title Roll a Two-Sided Dice
-#'
-#' @description Picks a random number from 1-2. Essentially flips a coin.
-#'
-#' @return (numeric) result of "roll" of specified dice type
-#' @export
-#'
-d2 <- function(){ base::sample(x = 1:2, size = 1) }
