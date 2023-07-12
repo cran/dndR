@@ -1,11 +1,11 @@
 Package: dndR
 Type: Package
 Title: Dungeons & Dragons Functions for Players and Dungeon Masters
-Version: 1.1.0
+Version: 1.3.0
 Authors@R: c(
   person(given = "Nicholas", 
          family = "Lyon",
-         role = c("aut", "cre"),
+         role = c("aut", "cre", "cph"),
          email = "njlyon@alumni.iastate.edu",
          comment = c(ORCID = "0000-0003-3905-1078",
                      Website = "https://njlyon0.github.io/")),
@@ -32,10 +32,10 @@ Imports: dplyr, ggplot2, magrittr, purrr, stringr, tidyr
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-03-28 16:58:56 UTC; nick.lyon
-Author: Nicholas Lyon [aut, cre] (<https://orcid.org/0000-0003-3905-1078>,
+Packaged: 2023-07-11 13:12:35 UTC; nick.lyon
+Author: Nicholas Lyon [aut, cre, cph] (<https://orcid.org/0000-0003-3905-1078>,
     https://njlyon0.github.io/),
   Tim Schatto-Eckrodt [ctb] (https://kudusch.de/),
   Humberto Nappo [ctb] (<https://orcid.org/0000-0001-7810-1635>)
 Repository: CRAN
-Date/Publication: 2023-03-30 09:00:02 UTC
+Date/Publication: 2023-07-12 22:50:06 UTC

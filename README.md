@@ -8,10 +8,10 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/njlyon0/dndR/workflows/R-CMD-check/badge.svg)](https://github.com/njlyon0/dndR/actions)
-![GitHub last
-commit](https://img.shields.io/github/last-commit/njlyon0/dndR) ![GitHub
-issues](https://img.shields.io/github/issues-raw/njlyon0/dndR) ![GitHub
-pull requests](https://img.shields.io/github/issues-pr/njlyon0/dndR)
+[![](https://cranlogs.r-pkg.org/badges/dndR)](https://cran.r-project.org/package=dndR)
+![GitHub issues](https://img.shields.io/github/issues-raw/njlyon0/dndR)
+![GitHub pull
+requests](https://img.shields.io/github/issues-pr/njlyon0/dndR)
 <!-- badges: end -->
 
 The goal of `dndR` is to provide a suite of Dungeons & Dragons (Fifth
@@ -47,11 +47,23 @@ devtools::install_github("njlyon0/dndR")
 - **`ability_scores`** – Roll for six ability scores using specified
   method (e.g., 4d6 drop lowest, 3d6, or 1d20)
 
+- **`mod_calc`** – Calculate roll modifier for given ability score(s)
+
 - **`pc_creator`** – Stat out a character of specified race and class
   using your preferred method of rolling ability scores
 
   - Run `dnd_races()` or `dnd_classes()` to see which races/classes are
     currently supported by `pc_creator`
+
+- **`spell_list`** – Identify all spells that fit certain criteria
+  (e.g., spell level, school of magic, character class list, etc.)
+
+- **`spell_text`** – Retrieve full information and description text for
+  specified spell(s)
+
+- **`probability_plot`** – Generate a `ggplot2` plot of the frequency of
+  roll outcomes for the specified type and number of dice. You can also
+  specify the number of times to roll those dice to inform the plot
 
 - **`pc_level_calc`** – Identify the current level of a player character
   based on earned experience points (XP). Also returns the proficiency
@@ -91,6 +103,19 @@ devtools::install_github("njlyon0/dndR")
   when describing the patrons of a tavern or the travelers players
   glimpse on the edge of the flickering light cast by their campfire
 
+## Contributing Functions
+
+If you’d like to contribute function scripts or ideas, that is more than
+welcome! For specific instructions check out `CONTRIBUTING.md` but at a
+glance:
+
+- For function ideas, [open a Github
+  issue](https://github.com/njlyon0/dndR/issues)
+
+- For function scripts, either [open a Github
+  issue](https://github.com/njlyon0/dndR/issues) *or* fork the
+  repository and add your content to the `dev` folder
+
 ## Looking Ahead
 
 I know that there are rumblings of a change to statistic modifiers
@@ -98,6 +123,3 @@ becoming based on background rather than race so once those details are
 finalized I plan on creating a suite of functions that follow those
 guidelines. The extant functions follow “5e” rules as detailed in the
 Player’s Handbook (PHB) and Dungeon Master’s Guide (DMG).
-
-If you have other function ideas, [post them as
-Issues](https://github.com/njlyon0/dndR/issues) on this repository!
