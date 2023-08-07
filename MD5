@@ -1,7 +1,7 @@
-f2a97738cec24448dabdd0ebc4c164ee *DESCRIPTION
+e218c0b75379ea52895c650f3217da91 *DESCRIPTION
 256e81e7187aee1fae011a35d1dced17 *LICENSE
 e8377d9c5a6a62219e0db9f6232808d3 *NAMESPACE
-e9949b0a5d97c0a64908a8bfd6e56519 *NEWS.md
+630f1627e80011aab47a63ab733c575b *NEWS.md
 58a52cffbd5eb32a166d156874377c9c *R/ability_scores.R
 ca74dd9b561797d57e81ab5bb2714de6 *R/class_block.R
 d928f0087eede1c42087482e954a375c *R/cr_convert.R
@@ -27,10 +27,10 @@ ce0bf8ffd630dc32d9876ff31556a94a *R/xp_pool.R
 656118cec3590c1bf832f1563034fe7f *README.md
 4a2650c3cc68be0f8b2135f007433759 *build/vignette.rds
 41ed21f7647e9f24fe15875418046313 *data/monster_table.rda
-371c11a88ba71e819e93cf0375e4843e *data/spells.rda
+07bd6a297c11bb57fa5af7255ab26ed2 *data/spells.rda
 420038d51645be3e86b74e16d5eae45c *inst/doc/dndR_Vignette.R
 83947e467a4835544d332be2636c0a9d *inst/doc/dndR_Vignette.Rmd
-43f0bdbf41b4b22ab2a5a6c931ee25c0 *inst/doc/dndR_Vignette.html
+87aeaa9cc15e2f6812d60d18c397cc73 *inst/doc/dndR_Vignette.html
 bc7271a63dfcef3696355c00dcc026df *man/ability_scores.Rd
 b3835af9669cd46885ed2cf31b2a6450 *man/ability_singular.Rd
 10134bc171d371aec563d702e63b75ad *man/class_block.Rd
