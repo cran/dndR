@@ -1,6 +1,14 @@
-## dndR Version 1.3.0.900
+## dndR Version 2.0.0
 
-Development version of `dndR`. The following changes were made from the preceding version:
+The following changes were made from the preceding version:
+
+- New function: `encounter_creator` -- picks a set of creature experience point (XP) values that constitute a balanced encounter of specified difficulty and given party composition information
+- New function: `creature_list` -- identifies Dungeons & Dragons creatures based on user specifications of various criteria (e.g., creature type, experience point value, size, etc.)
+- New function: `creature_text` -- retrieves full description text of creature(s) specified by user
+- Adding support for re-rolling of 1s in `roll` result
+- Streamlined internal mechanics of `roll` such that dice with any number (integer) of faces can be rolled (e.g., "2d57", "d13", etc.)
+- Adding 5 spells to `spell_list` and `spell_text` (Antagonize, Gate Seal, Spirit of Death, Spray of Cards, and Warp Sense)
+- Vignettes restructured! Now categories of functions are housed in separate vignettes for--hopefully--easier navigation of the bits of this package that are most relevant to you
 
 ## dndR Version 1.3.1
 

@@ -1,0 +1,86 @@
+---
+title: "Finding & Making Creatures"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Finding & Making Creatures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+```{r libs, echo = F, message = F}
+# devtools::install_github("njlyon0/dndR", force = TRUE)
+library(dndR)
+```
+
+Whether they come from a standard source book or the darker corners of your imagination, the creatures your party faces can have a dramatic influence on the tone of your sessions and your players' experience. The following functions are meant to help DMs either find creatures that meet their needs or homebrew new antagonists to face off against their players.
+
+## Standard Creatures
+
+### Searching with Criteria
+
+If you want to identify creatures defined by official D&D source books, the `creature_list` function can be a helpful mechanism for narrowing your search. This function lets you search through official creatures based on criteria you specify. A dataframe including all of the big-picture information for creatures that meet your criteria is returned to help orient you for any subsequent steps you plan on taking. Note that all `creature_list` arguments that accept characters are case _in_-sensitive and queries use partial string matching so you don't need to try to engineer exact matches.
+
+See the help file for `monster_list` for the full list of supported query criteria.
+
+```{r creature_list}
+# Find all small creatures with 'goblin' in their name
+gobbo_df <- dndR::creature_list(name = "goblin", size = "small")
+
+# Check the structure of that output
+str(gobbo_df)
+```
+
+### Creature Descriptions
+
+If you need to access the specific description of a particular creature (or creatures), you can use the `creature_text` function. This returns an R-style dataframe equivalent of the sort of creature card information you'd find in the back of a typical D&D source book.
+
+```{r creature_text}
+# Get the information for a hunter shark
+shark_df <- dndR::creature_text(name = "hunter shark")
+
+# Check that out
+head(shark_df, n = 7)
+```
+
+## Generic Monster Stats
+
+### Converting Challenge Rating to XP
+
+The DMG provides a table (see p. 274) that gives the vital statistics of creatures based on their Challenge Rating (CR) but this table can be cumbersome to compare to Experience Points (XP) which are the numbers actually used to balance encounter difficulty. While there are functions that go further, at its simplest it can be nice to convert CR into XP. To that end, the `cr_convert` function can perform this conversion without too much stress.
+
+```{r cr_convert}
+# Convert a CR of 5 into equivalent XP
+dndR::cr_convert(cr = 5)
+```
+
+Now that we can do this conversion easily, we can use other `dndR` functions to go further.
+
+### Monster Statistics Table
+
+As referenced above, the DMG provides a nice table linking CR to standard monster statistics. If you'd rather avoid using that table you can instead use the `monster_stats` function to gather the information for which you are looking. To use this function, input either the XP you want to spend on this creature *or* the Challenge Rating (CR) if you know it.
+
+Once either XP or CR is provided, `monster_stats` returns the creature's statistics as they appear in the DMG for a *single* creature of that difficulty.
+
+```{r monster_stats}
+# Find the statistics of a single creature worth 8,000 XP
+dndR::monster_stats(xp = 8000)
+```
+
+Note that if both CR and XP are specified, XP is ignored in favor of CR. My assumption is that if you use CR you prefer it over XP.
+
+## Homebrew Monsters
+
+If you'd rather lean more into homebrewing your own monsters, the `monster_creator` function may be of interest. This function follows the advice of [Zee Bashew](https://twitter.com/Zeebashew) on how to build interesting, challenging monsters for your party. These monsters are built somewhat according to the Dungeon Master's Guide for creating monsters, partly Zee's [YouTube video on homebrewing monsters based on the video game *The Witcher*](https://www.youtube.com/watch?v=GhjkPv4qo5w), and partly on my own intuition about scaling the difficulty of a creature.
+
+Creatures are spawned randomly so you may need to re-run the function several times (or mentally modify one or more parts of the output) to get a monster that fits your campaign and players. Each creature is provided with up to five damage resistances, up to two damage immunities, and a single damage vulnerability. This combination allows you to build complex and mysterious homebrew monsters with plenty of opportunities to reward player investigation and insight in discovering the monster's strengths and weaknesses before the final showdown.
+
+```{r monster_creator}
+# Make a monster for a 4-person party of level 5
+dndR::monster_creator(party_level = 5, party_size = 4)
+```
+
+Note that if you use `monster_creator` you may need to help your players identify the creature's immunities and vulnerabilities *before* the actual confrontation with the creature to avoid sending them into a fight that is more difficult than your party can handle.
